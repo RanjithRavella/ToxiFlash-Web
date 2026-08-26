@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Coming Soon</title>
+    <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coming Soon</title>
 
     <style>
         * {
             box-sizing: border-box;
         }
-
 
         body {
             margin: 0;
@@ -24,13 +25,11 @@
             padding: 20px;
         }
 
-
         .container {
             width: 100%;
             max-width: 450px;
             padding: 20px;
         }
-
 
         img {
             width: min(250px, 70vw);
@@ -39,20 +38,17 @@
             object-fit: cover;
         }
 
-
         h1 {
             font-size: clamp(30px, 8vw, 42px);
             margin: 25px 0 10px;
             color: #222;
         }
 
-
         p {
             font-size: clamp(15px, 4vw, 18px);
             color: #666;
             line-height: 1.5;
         }
-
 
         .launch-text {
             margin-top: 25px;
@@ -61,55 +57,38 @@
             font-weight: bold;
         }
 
-
         .timer {
-
             display: flex;
             justify-content: center;
             gap: 10px;
             margin: 25px 0;
             flex-wrap: wrap;
-
         }
 
-
         .time-box {
-
             background: #222;
             color: white;
             padding: 12px;
             border-radius: 12px;
             width: 75px;
-
         }
 
-
         .time-box span {
-
             display: block;
             font-size: 28px;
             font-weight: bold;
-
         }
-
 
         .time-box small {
-
             font-size: 12px;
             color: #ddd;
-
         }
-
 
         .social {
-
             margin-top: 35px;
-
         }
 
-
         .social a {
-
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -120,193 +99,149 @@
             color: white;
             text-decoration: none;
             font-size: 22px;
-            transition: .3s;
-
+            transition: transform 0.3s ease;
         }
-
 
         .social a:hover {
-
             transform: scale(1.1);
-
         }
 
-
-        .twitter {
-            background: #000;
+        .website {
+            background: #333;
         }
-
-
-        .facebook {
-            background: #1877F2;
-        }
-
 
         .instagram {
             background: #E4405F;
         }
 
-
         .youtube {
             background: #FF0000;
         }
 
-
         .contact {
-
             margin-top: 30px;
             font-size: 16px;
             color: #555;
             word-break: break-word;
-
         }
 
-
         .contact a {
-
             color: #222;
             font-weight: bold;
             text-decoration: none;
-
         }
-
 
         .contact a:hover {
-
             color: #007bff;
-
         }
 
-
-
-        @media(max-width:480px) {
-
-
+        @media (max-width: 480px) {
             .container {
-
                 padding: 10px;
-
             }
-
 
             .time-box {
-
                 width: 65px;
                 padding: 10px;
-
             }
-
 
             .time-box span {
-
                 font-size: 22px;
-
             }
 
-
             .social a {
-
                 width: 40px;
                 height: 40px;
                 font-size: 20px;
-
             }
-
         }
 
-
-
-        @media(max-width:320px) {
-
-
+        @media (max-width: 320px) {
             .timer {
-
                 flex-direction: column;
                 align-items: center;
-
             }
-
 
             .time-box {
-
                 width: 100px;
-
             }
-
         }
     </style>
 
 </head>
 
-
 <body>
-
 
     <div class="container">
 
-
-        <img src="logo.png" alt="App Icon">
-
+        <img src="logo.png" alt="MedRewind App Icon">
 
         <h1>
             Coming Soon 🚀
         </h1>
-
 
         <p>
             We are building something amazing.<br>
             Stay tuned!
         </p>
 
-
         <div class="launch-text">
             Our app launches in:
         </div>
 
-
-
         <div class="timer">
-
 
             <div class="time-box">
                 <span id="days">00</span>
                 <small>Days</small>
             </div>
 
-
             <div class="time-box">
                 <span id="hours">00</span>
                 <small>Hours</small>
             </div>
-
 
             <div class="time-box">
                 <span id="minutes">00</span>
                 <small>Minutes</small>
             </div>
 
-
             <div class="time-box">
                 <span id="seconds">00</span>
                 <small>Seconds</small>
             </div>
 
-
         </div>
 
-
         <div class="social">
-            <a class="website" href="https://www.medrewind.com/" target="_blank">
+
+            <a
+                class="website"
+                href="https://www.medrewind.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MedRewind Website">
                 🌐
             </a>
 
-            <a class="instagram" href="https://www.instagram.com/medrewind/" target="_blank">
+            <a
+                class="instagram"
+                href="https://www.instagram.com/medrewind/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MedRewind Instagram">
                 ◎
             </a>
 
-            <a class="youtube" href="https://www.youtube.com/@MedRewind" target="_blank">
+            <a
+                class="youtube"
+                href="https://www.youtube.com/@MedRewind"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MedRewind YouTube">
                 ▶
             </a>
+
         </div>
 
         <div class="contact">
@@ -314,50 +249,44 @@
             For more details, please contact:
             <br>
 
-            <a href="mailto:Sahilpasha912@gmail.com">
+            <a href="mailto:drranjith88@gmail.com">
                 drranjith88@gmail.com
             </a>
 
         </div>
 
-
-
     </div>
-
-
-
-
 
     <script>
 
+        // Launch date: September 15, 2026 at 12:00 AM IST
+        const launchDate =
+            new Date("2026-09-15T00:00:00+05:30").getTime();
 
-        // Set launch date here
-        const launchDate = new Date("2026-09-15T00:00:00").getTime();
 
-
-
-        const timer = setInterval(function () {
-
+        function updateTimer() {
 
             const now = new Date().getTime();
 
             const distance = launchDate - now;
 
 
-
-            if (distance < 0) {
+            // App is live
+            if (distance <= 0) {
 
                 clearInterval(timer);
 
                 document.querySelector(".timer").innerHTML =
                     "🚀 App is Live!";
 
-                return;
+                document.querySelector(".launch-text").innerHTML =
+                    "We're live!";
 
+                return;
             }
 
 
-
+            // Calculate time
             const days = Math.floor(
                 distance / (1000 * 60 * 60 * 24)
             );
@@ -381,30 +310,29 @@
             );
 
 
-
-            document.getElementById("days").innerHTML =
+            // Update HTML
+            document.getElementById("days").textContent =
                 String(days).padStart(2, "0");
 
-
-            document.getElementById("hours").innerHTML =
+            document.getElementById("hours").textContent =
                 String(hours).padStart(2, "0");
 
-
-            document.getElementById("minutes").innerHTML =
+            document.getElementById("minutes").textContent =
                 String(minutes).padStart(2, "0");
 
-
-            document.getElementById("seconds").innerHTML =
+            document.getElementById("seconds").textContent =
                 String(seconds).padStart(2, "0");
+        }
 
 
+        // Run immediately
+        updateTimer();
 
-        }, 1000);
 
-
+        // Update every second
+        const timer = setInterval(updateTimer, 1000);
 
     </script>
-
 
 </body>
 
