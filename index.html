@@ -6,7 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Coming Soon</title>
+    <title>ToxiFlash - Android App</title>
 
     <style>
         * {
@@ -16,323 +16,577 @@
         body {
             margin: 0;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
             font-family: Arial, sans-serif;
             background: #F9F6F0;
-            padding: 20px;
+            color: #222;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
         }
+
+        /* MAIN CONTAINER */
 
         .container {
             width: 100%;
-            max-width: 450px;
+            max-width: 1000px;
+
+            display: grid;
+            grid-template-columns: 40% 60%;
+
+            align-items: center;
+
+            background: #ffffff;
+
+            border-radius: 25px;
+
+            padding: 50px;
+
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =========================
+           LEFT SIDE
+        ========================== */
+
+        .left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             padding: 20px;
         }
 
-        img {
-            width: min(250px, 70vw);
-            height: min(250px, 70vw);
-            border-radius: 25px;
+
+        /* APP LOGO */
+
+        .app-icon {
+            width: min(300px, 28vw);
+            height: min(300px, 28vw);
+
+            border-radius: 35px;
+
             object-fit: cover;
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.15);
+
+            /*
+             * Continuous zoom animation
+             */
+            animation:
+                logoZoom 2.5s ease-in-out infinite;
         }
 
+
+        /* LOGO ZOOM ANIMATION */
+
+        @keyframes logoZoom {
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+
+        }
+
+
+        /* =========================
+           RIGHT SIDE
+        ========================== */
+
+        .right {
+            padding: 10px 20px 10px 40px;
+        }
+
+
+        /* TITLE */
+
         h1 {
-            font-size: clamp(30px, 8vw, 42px);
-            margin: 25px 0 10px;
+            font-size: clamp(28px, 4vw, 42px);
+
+            margin: 0 0 20px;
+
+            line-height: 1.2;
+
             color: #222;
         }
 
-        p {
-            font-size: clamp(15px, 4vw, 18px);
-            color: #666;
+
+        /* DESCRIPTION */
+
+        .description {
+            font-size: 17px;
+
+            color: #555;
+
+            line-height: 1.6;
+
+            margin: 0 0 15px;
+        }
+
+
+        /* FEEDBACK TEXT */
+
+        .feedback {
+            font-size: 16px;
+
+            color: #555;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           ANDROID DOWNLOAD BUTTON
+        ========================== */
+
+        .download-btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 14px 24px;
+
+            background: #4338ca;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            border-radius: 10px;
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .download-btn:hover {
+            background: #2d8f47;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 20px rgba(52, 168, 83, 0.3);
+        }
+
+
+        /* =========================
+           IOS SECTION
+        ========================== */
+
+        .ios {
+            margin-top: 20px;
+
+            padding: 14px 16px;
+
+            background: #f4f1eb;
+
+            border-radius: 12px;
+
+            color: #555;
+
+            font-size: 15px;
+
             line-height: 1.5;
         }
 
-        .launch-text {
-            margin-top: 25px;
-            font-size: clamp(17px, 4vw, 20px);
-            color: #333;
-            font-weight: bold;
+
+        .ios strong {
+            color: #222;
         }
 
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 25px 0;
-            flex-wrap: wrap;
-        }
 
-        .time-box {
-            background: #222;
-            color: white;
-            padding: 12px;
-            border-radius: 12px;
-            width: 75px;
-        }
-
-        .time-box span {
-            display: block;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .time-box small {
-            font-size: 12px;
-            color: #ddd;
-        }
+        /* =========================
+           SOCIAL LINKS
+        ========================== */
 
         .social {
-            margin-top: 35px;
+            margin-top: 25px;
         }
+
 
         .social a {
             display: inline-flex;
+
             justify-content: center;
             align-items: center;
-            width: 45px;
-            height: 45px;
-            margin: 5px;
+
+            width: 42px;
+            height: 42px;
+
+            margin-right: 8px;
+
             border-radius: 50%;
+
             color: white;
+
             text-decoration: none;
-            font-size: 22px;
-            transition: transform 0.3s ease;
+
+            font-size: 20px;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
         }
 
+
         .social a:hover {
-            transform: scale(1.1);
+            transform: scale(1.12);
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.2);
         }
+
 
         .website {
             background: #333;
         }
 
+
         .instagram {
             background: #E4405F;
         }
+
 
         .youtube {
             background: #FF0000;
         }
 
+
+        /* =========================
+           CONTACT
+        ========================== */
+
         .contact {
-            margin-top: 30px;
-            font-size: 16px;
-            color: #555;
-            word-break: break-word;
+            margin-top: 22px;
+
+            font-size: 15px;
+
+            color: #666;
+
+            line-height: 1.8;
         }
+
 
         .contact a {
             color: #222;
+
             font-weight: bold;
+
             text-decoration: none;
+
+            transition: color 0.3s ease;
         }
+
 
         .contact a:hover {
             color: #007bff;
         }
 
-        @media (max-width: 480px) {
+
+        /* =========================
+           TABLET / MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            body {
+                padding: 20px;
+            }
+
+
             .container {
+
+                grid-template-columns: 1fr;
+
+                padding: 35px 25px;
+
+                text-align: center;
+            }
+
+
+            .left {
                 padding: 10px;
             }
 
-            .time-box {
-                width: 65px;
+
+            .app-icon {
+
+                width: 220px;
+
+                height: 220px;
+            }
+
+
+            .right {
+
+                padding: 25px 5px 5px;
+            }
+
+
+            .download-btn {
+
+                width: 100%;
+
+                max-width: 320px;
+            }
+
+
+            .ios {
+
+                text-align: left;
+            }
+
+
+            .social {
+
+                margin-top: 25px;
+            }
+
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================== */
+
+        @media (max-width: 400px) {
+
+            body {
                 padding: 10px;
             }
 
-            .time-box span {
-                font-size: 22px;
+
+            .container {
+
+                padding: 25px 18px;
+
+                border-radius: 18px;
             }
 
-            .social a {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
+
+            .app-icon {
+
+                width: 180px;
+
+                height: 180px;
+
+                border-radius: 25px;
             }
+
+
+            h1 {
+
+                font-size: 28px;
+            }
+
+
+            .description {
+
+                font-size: 15px;
+            }
+
+
+            .feedback {
+
+                font-size: 15px;
+            }
+
         }
 
-        @media (max-width: 320px) {
-            .timer {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .time-box {
-                width: 100px;
-            }
-        }
     </style>
 
 </head>
 
+
 <body>
+
 
     <div class="container">
 
-        <img src="logo.png" alt="MedRewind App Icon">
 
-        <h1>
-            Coming Soon 🚀
-        </h1>
+        <!-- =========================
+             LEFT: APP ICON
+        ========================== -->
 
-        <p>
-            We are building something amazing.<br>
-            Stay tuned!
-        </p>
+        <div class="left">
 
-        <div class="launch-text">
-            Our app launches in:
-        </div>
-
-        <div class="timer">
-
-            <div class="time-box">
-                <span id="days">00</span>
-                <small>Days</small>
-            </div>
-
-            <div class="time-box">
-                <span id="hours">00</span>
-                <small>Hours</small>
-            </div>
-
-            <div class="time-box">
-                <span id="minutes">00</span>
-                <small>Minutes</small>
-            </div>
-
-            <div class="time-box">
-                <span id="seconds">00</span>
-                <small>Seconds</small>
-            </div>
+            <img
+                src="logo.png"
+                alt="ToxiFlash App Icon"
+                class="app-icon">
 
         </div>
 
-        <div class="social">
+
+        <!-- =========================
+             RIGHT: CONTENT
+        ========================== -->
+
+        <div class="right">
+
+
+            <!-- TITLE -->
+
+            <h1>
+                📢 ToxiFlash is Live on Android!
+            </h1>
+
+
+            <!-- DESCRIPTION -->
+
+            <p class="description">
+
+                A handy app for quick reference to
+                antidotes, along with poisoning-related
+                articles and educational videos.
+
+            </p>
+
+
+            <!-- FEEDBACK -->
+
+            <p class="feedback">
+
+                Kindly download the app, explore it,
+                and share your feedback and suggestions.
+                We'd love to hear your opinion! 🙏
+
+            </p>
+
+
+            <!-- ANDROID DOWNLOAD -->
 
             <a
-                class="website"
-                href="https://www.medrewind.com/"
+                class="download-btn"
+                href="https://play.google.com/store/apps/details?id=com.medrewind.toxiflash&pcampaignid=web_share"
                 target="_blank"
-                rel="noopener noreferrer"
-                aria-label="MedRewind Website">
-                🌐
+                rel="noopener noreferrer">
+
+                📲 Download on Android
+
             </a>
 
-            <a
-                class="instagram"
-                href="https://www.instagram.com/medrewind/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="MedRewind Instagram">
-                ◎
-            </a>
 
-            <a
-                class="youtube"
-                href="https://www.youtube.com/@MedRewind"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="MedRewind YouTube">
-                ▶
-            </a>
+            <!-- IOS -->
 
-        </div>
+            <div class="ios">
 
-        <div class="contact">
+                🍎 <strong>iOS Version Coming Soon!</strong>
 
-            For more details, please contact:
-            <br>
+                <br>
 
-            <a href="mailto:drranjith88@gmail.com">
-                drranjith88@gmail.com
-            </a>
+                We're working on bringing ToxiFlash
+                to iOS. Stay tuned!
+
+            </div>
+
+
+            <!-- SOCIAL LINKS -->
+
+            <div class="social">
+
+
+                <!-- WEBSITE -->
+
+                <a
+                    class="website"
+                    href="https://www.medrewind.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MedRewind Website">
+
+                    🌐
+
+                </a>
+
+
+                <!-- INSTAGRAM -->
+
+                <a
+                    class="instagram"
+                    href="https://www.instagram.com/medrewind/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MedRewind Instagram">
+
+                    ◎
+
+                </a>
+
+
+                <!-- YOUTUBE -->
+
+                <a
+                    class="youtube"
+                    href="https://www.youtube.com/@MedRewind"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MedRewind YouTube">
+
+                    ▶
+
+                </a>
+
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="contact">
+
+                For more details, please contact:
+
+                <br>
+
+
+                <a href="mailto:drranjith88@gmail.com">
+
+                    drranjith88@gmail.com
+
+                </a>
+
+
+                <br>
+
+
+                <a href="mailto:help@toxiflash.com">
+
+                    help@toxiflash.com
+
+                </a>
+
+            </div>
+
 
         </div>
 
     </div>
 
-    <script>
-
-        // Launch date: September 15, 2026 at 12:00 AM IST
-        const launchDate =
-            new Date("2026-09-15T00:00:00+05:30").getTime();
-
-
-        function updateTimer() {
-
-            const now = new Date().getTime();
-
-            const distance = launchDate - now;
-
-
-            // App is live
-            if (distance <= 0) {
-
-                clearInterval(timer);
-
-                document.querySelector(".timer").innerHTML =
-                    "🚀 App is Live!";
-
-                document.querySelector(".launch-text").innerHTML =
-                    "We're live!";
-
-                return;
-            }
-
-
-            // Calculate time
-            const days = Math.floor(
-                distance / (1000 * 60 * 60 * 24)
-            );
-
-
-            const hours = Math.floor(
-                (distance % (1000 * 60 * 60 * 24)) /
-                (1000 * 60 * 60)
-            );
-
-
-            const minutes = Math.floor(
-                (distance % (1000 * 60 * 60)) /
-                (1000 * 60)
-            );
-
-
-            const seconds = Math.floor(
-                (distance % (1000 * 60)) /
-                1000
-            );
-
-
-            // Update HTML
-            document.getElementById("days").textContent =
-                String(days).padStart(2, "0");
-
-            document.getElementById("hours").textContent =
-                String(hours).padStart(2, "0");
-
-            document.getElementById("minutes").textContent =
-                String(minutes).padStart(2, "0");
-
-            document.getElementById("seconds").textContent =
-                String(seconds).padStart(2, "0");
-        }
-
-
-        // Run immediately
-        updateTimer();
-
-
-        // Update every second
-        const timer = setInterval(updateTimer, 1000);
-
-    </script>
 
 </body>
 
