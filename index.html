@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ToxiFlash - Android App</title>
+    <meta name="theme-color" content="#F9F6F0">
+    <meta name="description" content="ToxiFlash is now available on Android and iOS. Explore antidote references, poisoning-related articles, and educational videos.">
+
+    <title>ToxiFlash - Now Available on Android & iOS</title>
 
     <style>
         * {
@@ -19,11 +21,9 @@
             font-family: Arial, sans-serif;
             background: #F9F6F0;
             color: #222;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             padding: 30px;
         }
 
@@ -32,528 +32,416 @@
         .container {
             width: 100%;
             max-width: 1000px;
-
             display: grid;
             grid-template-columns: 40% 60%;
-
             align-items: center;
-
-            background: #ffffff;
-
+            background: #fff;
             border-radius: 25px;
-
             padding: 50px;
-
-            box-shadow:
-                0 10px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
         }
 
-
-        /* =========================
-           LEFT SIDE
-        ========================== */
+        /* LEFT SIDE */
 
         .left {
             display: flex;
             justify-content: center;
             align-items: center;
-
             padding: 20px;
         }
-
 
         /* APP LOGO */
 
         .app-icon {
             width: min(300px, 28vw);
             height: min(300px, 28vw);
-
             border-radius: 35px;
-
             object-fit: cover;
-
-            box-shadow:
-                0 15px 35px rgba(0, 0, 0, 0.15);
-
-            /*
-             * Continuous zoom animation
-             */
-            animation:
-                logoZoom 2.5s ease-in-out infinite;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            animation: logoZoom 2.5s ease-in-out infinite;
         }
 
-
-        /* LOGO ZOOM ANIMATION */
-
         @keyframes logoZoom {
-
-            0% {
+            0%, 100% {
                 transform: scale(1);
             }
 
             50% {
                 transform: scale(1.08);
             }
-
-            100% {
-                transform: scale(1);
-            }
-
         }
 
-
-        /* =========================
-           RIGHT SIDE
-        ========================== */
+        /* RIGHT SIDE */
 
         .right {
             padding: 10px 20px 10px 40px;
         }
 
-
         /* TITLE */
 
         h1 {
             font-size: clamp(28px, 4vw, 42px);
-
             margin: 0 0 20px;
-
             line-height: 1.2;
-
             color: #222;
         }
-
 
         /* DESCRIPTION */
 
         .description {
             font-size: 17px;
-
             color: #555;
-
             line-height: 1.6;
-
             margin: 0 0 15px;
         }
 
-
-        /* FEEDBACK TEXT */
-
         .feedback {
             font-size: 16px;
-
             color: #555;
-
             line-height: 1.6;
-
             margin-bottom: 25px;
         }
 
+        /* DOWNLOAD BUTTONS */
 
-        /* =========================
-           ANDROID DOWNLOAD BUTTON
-        ========================== */
+        .download-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
 
         .download-btn {
             display: inline-flex;
-
             align-items: center;
             justify-content: center;
-
-            gap: 8px;
-
-            padding: 14px 24px;
-
+            gap: 9px;
+            padding: 14px 20px;
             background: #4338ca;
-
-            color: white;
-
+            color: #fff;
             text-decoration: none;
-
-            font-size: 17px;
-
+            font-size: 16px;
             font-weight: bold;
-
             border-radius: 10px;
-
+            border: 2px solid transparent;
             transition:
                 background 0.3s ease,
                 transform 0.3s ease,
                 box-shadow 0.3s ease;
         }
 
-
         .download-btn:hover {
-            background: #2d8f47;
-
             transform: translateY(-3px);
-
-            box-shadow:
-                0 8px 20px rgba(52, 168, 83, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
+        .android-btn {
+            background: #4338ca;
+        }
 
-        /* =========================
-           IOS SECTION
-        ========================== */
+        .android-btn:hover {
+            background: #2d8f47;
+        }
 
-        .ios {
-            margin-top: 20px;
+        .ios-btn {
+            background: #111;
+        }
 
+        .ios-btn:hover {
+            background: #333;
+        }
+
+        .download-btn .store-icon {
+            font-size: 23px;
+            line-height: 1;
+        }
+
+        /* AVAILABILITY MESSAGE */
+
+        .availability {
+            margin-top: 22px;
             padding: 14px 16px;
-
             background: #f4f1eb;
-
             border-radius: 12px;
-
             color: #555;
-
             font-size: 15px;
-
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-
-        .ios strong {
+        .availability strong {
             color: #222;
         }
 
-
-        /* =========================
-           SOCIAL LINKS
-        ========================== */
+        /* SOCIAL LINKS */
 
         .social {
             margin-top: 25px;
         }
 
-
         .social a {
             display: inline-flex;
-
             justify-content: center;
             align-items: center;
-
             width: 42px;
             height: 42px;
-
             margin-right: 8px;
-
             border-radius: 50%;
-
-            color: white;
-
+            color: #fff;
             text-decoration: none;
-
             font-size: 20px;
-
             transition:
                 transform 0.3s ease,
                 box-shadow 0.3s ease;
         }
 
-
         .social a:hover {
             transform: scale(1.12);
-
-            box-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
 
         .website {
             background: #333;
         }
 
-
         .instagram {
             background: #E4405F;
         }
-
 
         .youtube {
             background: #FF0000;
         }
 
-
-        /* =========================
-           CONTACT
-        ========================== */
+        /* CONTACT */
 
         .contact {
             margin-top: 22px;
-
             font-size: 15px;
-
             color: #666;
-
             line-height: 1.8;
+            overflow-wrap: anywhere;
         }
-
 
         .contact a {
             color: #222;
-
             font-weight: bold;
-
             text-decoration: none;
-
             transition: color 0.3s ease;
         }
-
 
         .contact a:hover {
             color: #007bff;
         }
 
-
-        /* =========================
-           TABLET / MOBILE
-        ========================== */
+        /* TABLET AND MOBILE */
 
         @media (max-width: 768px) {
-
             body {
                 padding: 20px;
             }
 
-
             .container {
-
                 grid-template-columns: 1fr;
-
                 padding: 35px 25px;
-
                 text-align: center;
             }
-
 
             .left {
                 padding: 10px;
             }
 
-
             .app-icon {
-
                 width: 220px;
-
                 height: 220px;
             }
 
-
             .right {
-
                 padding: 25px 5px 5px;
             }
 
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
 
             .download-btn {
-
                 width: 100%;
-
                 max-width: 320px;
             }
 
-
-            .ios {
-
+            .availability {
                 text-align: left;
             }
 
-
             .social {
-
                 margin-top: 25px;
             }
-
         }
 
-
-        /* =========================
-           SMALL MOBILE
-        ========================== */
+        /* SMALL MOBILE */
 
         @media (max-width: 400px) {
-
             body {
                 padding: 10px;
             }
 
-
             .container {
-
                 padding: 25px 18px;
-
                 border-radius: 18px;
             }
 
-
             .app-icon {
-
                 width: 180px;
-
                 height: 180px;
-
                 border-radius: 25px;
             }
 
-
             h1 {
-
                 font-size: 28px;
             }
 
-
-            .description {
-
-                font-size: 15px;
-            }
-
-
+            .description,
             .feedback {
-
                 font-size: 15px;
             }
 
+            .download-btn {
+                font-size: 15px;
+                padding: 13px 15px;
+            }
         }
 
+        /* RESPECT REDUCED MOTION PREFERENCES */
+
+        @media (prefers-reduced-motion: reduce) {
+            .app-icon {
+                animation: none;
+            }
+
+            .download-btn,
+            .social a,
+            .contact a {
+                transition: none;
+            }
+        }
     </style>
-
 </head>
-
 
 <body>
 
+    <main class="container">
 
-    <div class="container">
-
-
-        <!-- =========================
-             LEFT: APP ICON
-        ========================== -->
+        <!-- LEFT: APP ICON -->
 
         <div class="left">
-
             <img
                 src="logo.png"
                 alt="ToxiFlash App Icon"
-                class="app-icon">
-
+                class="app-icon"
+            >
         </div>
 
-
-        <!-- =========================
-             RIGHT: CONTENT
-        ========================== -->
+        <!-- RIGHT: CONTENT -->
 
         <div class="right">
 
-
-            <!-- TITLE -->
-
             <h1>
-                📢 ToxiFlash is Live on Android!
+                📢 ToxiFlash is Now Live on Android &amp; iOS!
             </h1>
 
-
-            <!-- DESCRIPTION -->
-
             <p class="description">
-
-                A handy app for quick reference to
-                antidotes, along with poisoning-related
-                articles and educational videos.
-
+                A handy app for quick reference to antidotes,
+                along with poisoning-related articles and
+                educational videos.
             </p>
-
-
-            <!-- FEEDBACK -->
 
             <p class="feedback">
-
-                Kindly download the app, explore it,
+                ToxiFlash is now available on both Android
+                and iOS! Download the app, explore its features,
                 and share your feedback and suggestions.
                 We'd love to hear your opinion! 🙏
-
             </p>
 
+            <!-- DOWNLOAD BUTTONS -->
 
-            <!-- ANDROID DOWNLOAD -->
+            <div class="download-buttons">
 
-            <a
-                class="download-btn"
-                href="https://play.google.com/store/apps/details?id=com.medrewind.toxiflash&pcampaignid=web_share"
-                target="_blank"
-                rel="noopener noreferrer">
+                <!-- ANDROID DOWNLOAD -->
 
-                📲 Download on Android
+                <a
+                    class="download-btn android-btn"
+                    href="https://play.google.com/store/apps/details?id=com.medrewind.toxiflash&amp;pcampaignid=web_share"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Download ToxiFlash on Android"
+                >
+                    <span class="store-icon" aria-hidden="true">▶</span>
+                    <span>Download on Android</span>
+                </a>
 
-            </a>
+                <!-- IOS DOWNLOAD -->
 
-
-            <!-- IOS -->
-
-            <div class="ios">
-
-                🍎 <strong>iOS Version Coming Soon!</strong>
-
-                <br>
-
-                We're working on bringing ToxiFlash
-                to iOS. Stay tuned!
+                <a
+                    class="download-btn ios-btn"
+                    href="https://apps.apple.com/in/app/toxiflash/id6811077243"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Download ToxiFlash on the App Store"
+                >
+                    <span class="store-icon" aria-hidden="true"></span>
+                    <span>Download on iOS</span>
+                </a>
 
             </div>
 
+            <!-- AVAILABILITY MESSAGE -->
+
+            <div class="availability">
+                🎉 <strong>Available Now on Android &amp; iOS!</strong>
+                <br>
+                Get ToxiFlash on your preferred platform and
+                explore a convenient resource for antidote
+                references, poisoning-related articles, and
+                educational videos.
+            </div>
 
             <!-- SOCIAL LINKS -->
 
             <div class="social">
-
-
-                <!-- WEBSITE -->
 
                 <a
                     class="website"
                     href="https://www.medrewind.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="MedRewind Website">
-
+                    aria-label="MedRewind Website"
+                    title="MedRewind Website"
+                >
                     🌐
-
                 </a>
-
-
-                <!-- INSTAGRAM -->
 
                 <a
                     class="instagram"
                     href="https://www.instagram.com/medrewind/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="MedRewind Instagram">
-
+                    aria-label="MedRewind Instagram"
+                    title="Instagram"
+                >
                     ◎
-
                 </a>
-
-
-                <!-- YOUTUBE -->
 
                 <a
                     class="youtube"
                     href="https://www.youtube.com/@MedRewind"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="MedRewind YouTube">
-
+                    aria-label="MedRewind YouTube"
+                    title="YouTube"
+                >
                     ▶
-
                 </a>
 
-
             </div>
-
 
             <!-- CONTACT -->
 
@@ -563,31 +451,21 @@
 
                 <br>
 
-
                 <a href="mailto:drranjith88@gmail.com">
-
                     drranjith88@gmail.com
-
                 </a>
-
 
                 <br>
 
-
                 <a href="mailto:help@toxiflash.com">
-
                     help@toxiflash.com
-
                 </a>
 
             </div>
 
-
         </div>
 
-    </div>
-
+    </main>
 
 </body>
-
 </html>
